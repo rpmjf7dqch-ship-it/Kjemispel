@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="nn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Kjemispel</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <section id="menu" class="panel">
+      <h1>Kjemispel</h1>
+      <p>Vel ein modus og tren på periodesystemet og redoks.</p>
+      <button data-mode="wordle-menu">Periodesystem Wordle</button>
+      <button data-mode="oxides">Oksider</button>
+      <button data-mode="hsab">HSAB</button>
+      <button data-mode="organic-menu">Organisk redoks</button>
+    </section>
+
+    <section id="wordleMenu" class="panel hidden">
+      <h1>Wordle-modus</h1>
+      <button data-start-wordle="easy">Easy</button>
+      <button data-start-wordle="hard">Hard, 3 liv</button>
+      <button class="secondary" data-mode="menu">Tilbake</button>
+    </section>
+
+    <section id="organicMenu" class="panel hidden">
+      <h1>Organisk redoks</h1>
+      <button data-start-organic="easy">Easy, tekst</button>
+      <button data-start-organic="hard">Hard, tekst + formlar</button>
+      <button class="secondary" data-mode="menu">Tilbake</button>
+    </section>
+
+    <section id="game" class="hidden">
+      <div class="topbar">
+        <button id="backToMenu" class="secondary">Meny</button>
+        <div>
+          <h2 id="question">Spørsmål</h2>
+          <p id="result"></p>
+        </div>
+      </div>
+
+      <div id="tableArea" class="table-wrap">
+        <img id="periodicImage" src="Blank-Periodic-Table.png" alt="Periodic table" />
+        <svg id="overlay" viewBox="0 0 792 612" preserveAspectRatio="none"></svg>
+      </div>
+
+      <div id="organicArea" class="organic hidden"></div>
+
+      <div id="answerArea" class="answer-area hidden">
+        <div id="typed">__</div>
+        <div class="keyboard">
+          <button data-key="Backspace">⌫</button>
+          <button data-key="Enter">Enter</button>
+          <button data-key="Skip">Skip</button>
+        </div>
+        <div id="letters" class="letters"></div>
+      </div>
+    </section>
+
+    <section id="stats" class="panel hidden">
+      <h1 id="statsTitle">Ferdig!</h1>
+      <p id="statsText"></p>
+      <button id="playAgain">Spel igjen</button>
+      <button class="secondary" data-mode="menu">Meny</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
